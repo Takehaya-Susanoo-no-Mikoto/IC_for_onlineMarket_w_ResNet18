@@ -42,11 +42,14 @@ Epoch [19/20], Loss (train/test) : 0.0119/0.0162,Acc (train/test): 0.8549/0.7115
 Epoch [20/20], Loss (train/test) : 0.0112/0.0138,Acc (train/test): 0.8728/0.7622
 
 pretty good acc for just changing last layer of ResNet18. This code can't show the full tunning process, but this architecture still can be good at classifying stuff like that
+
 ![598610](https://user-images.githubusercontent.com/124432421/236702689-1046c983-4402-436e-af59-3308e541ffef.jpg)
 
 or that
 
 ![539877](https://user-images.githubusercontent.com/124432421/236702723-a644bbcf-1894-411b-a491-69e1207df6f6.jpg)
+
 ![372486](https://user-images.githubusercontent.com/124432421/236702725-14e9a29a-37ec-45ab-9078-c394e769d747.jpg)
+
 # Creating database
 Also u can check my Lmdb solution of storing data from images if u have same problems with timeworking of ur hard disk as me
