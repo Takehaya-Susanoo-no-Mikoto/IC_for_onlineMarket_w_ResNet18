@@ -1,6 +1,7 @@
 # IR_for_onlineMarket_w_ResNet18
 Image recognation for KazanExpress dataset
-Epoch [1/20], Loss (train/test) : 2.6906/2.0638,Acc (train/test): 0.1435/0.0567 /n
+
+Epoch [1/20], Loss (train/test) : 2.6906/2.0638,Acc (train/test): 0.1435/0.0567 
 Epoch [2/20], Loss (train/test) : 1.8386/1.6680,Acc (train/test): 0.1322/0.0789
 Epoch [3/20], Loss (train/test) : 1.4393/0.9365,Acc (train/test): 0.1570/0.0817
 Epoch [4/20], Loss (train/test) : 0.6363/0.8044,Acc (train/test): 0.3029/0.0918
