@@ -17,24 +17,41 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 batch_size = 32
 
-env = lmdb.open(lmdb_path, map_size=1099511627776, max_dbs=1)
+def read_image(path):
+    """Reads an image from a file."""
+    with Image.open(path) as img:
+        img = img.convert('RGB')
+        img = np.array(img)
+    return img
 
+def read_data(data_dir):
+    """Reads images and labels from a directory."""
+    data = []
+    for class_name in os.listdir(data_dir):
+        class_dir = os.path.join(data_dir, class_name)
+        if not os.path.isdir(class_dir):
+            continue
+        for file_name in os.listdir(class_dir):
+            if not file_name.endswith('.jpg'):
+                continue
+            file_path = os.path.join(class_dir, file_name)
+            img = read_image(file_path)
+            label = class_name.encode()
+            data.append((img, label))
+    return data
 
-with env.begin(write=True) as txn:
-    # Перебор файлов в папке с изображениями
-    for root, dirs, files in os.walk(image_folder):
-        for file in files:
-            # Путь к файлу изображения
-            image_path = os.path.join(root, file)
+def write_data(data, path):
+    """Writes data to an Lmdb database."""
+    map_size = 1024 * 1024 * 1024
+    env = lmdb.open(path, map_size=map_size)
+    with env.begin(write=True) as txn:
+        for i, (img, label) in enumerate(data):
+            key = f'{i:08}'.encode()
+            txn.put(key, img)
+            txn.put(key + b'_label', label)
 
-            # Загрузка изображения и метки класса
-            image = Image.open(image_path).convert('RGB')
-            label = os.path.basename(root)
-
-            image_bytes = image.tobytes()
-
-            # Добавление данных в базу данных LMDB
-            txn.put(os.path.basename(image_path).encode('utf-8'), label.encode('utf-8'))
+data = read_data(image_folder)
+write_data(data, lmdb_path)
 
 
 class LMDBDataset(data.Dataset):
