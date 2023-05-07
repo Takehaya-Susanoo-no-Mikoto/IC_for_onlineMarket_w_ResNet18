@@ -1,5 +1,5 @@
-# IR_for_onlineMarket_w_ResNet18
-Image recognation for KazanExpress dataset
+# ImageСlassification_for_onlineMarket_w_ResNet18
+Image classification for KazanExpress dataset
 
 Epoch [1/20], Loss (train/test) : 2.6906/2.0638,Acc (train/test): 0.1435/0.0567 
 
