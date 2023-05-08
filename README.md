@@ -9,7 +9,7 @@ This code requires the following libraries:
 - torchvision
 - os
 
-Usage
+## Usage
 Download the dataset and place it in the train and test directories respectively.
 Update the train_root and test_root paths in the code to match the directories containing the dataset.
 Run the code using python <filename>.py.
