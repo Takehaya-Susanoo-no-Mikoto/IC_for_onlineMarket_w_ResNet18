@@ -36,6 +36,8 @@ The model is trained using the SGD optimizer with a learning rate of 0.001 and w
 Output
 The code prints the training and validation loss and accuracy for each epoch. The trained model is saved to a file named ResNet.pt in the specified directory.
 
+### Epochs
+
 Epoch [1/20], Loss (train/test) : 2.6906/2.0638,Acc (train/test): 0.1435/0.0567 
 
 Epoch [2/20], Loss (train/test) : 1.8386/1.6680,Acc (train/test): 0.1322/0.0789
