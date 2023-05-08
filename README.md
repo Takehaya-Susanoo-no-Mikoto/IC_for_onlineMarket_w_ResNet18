@@ -1,6 +1,39 @@
 # ImageСlassification_for_onlineMarket_w_ResNet18
-Image classification for KazanExpress dataset
+Image classification for KazanExpress dataset using ResNet18
+This code performs image classification on a dataset using the ResNet18 neural network architecture. The dataset consists of two directories, train and test, each containing subdirectories for each class of image.
 
+Prerequisites
+This code requires the following libraries:
+
+torch
+torchvision
+os
+Usage
+Download the dataset and place it in the train and test directories respectively.
+Update the train_root and test_root paths in the code to match the directories containing the dataset.
+Run the code using python <filename>.py.
+Parameters
+The code has the following parameters:
+
+num_epochs: number of training epochs
+lr: learning rate for the optimizer
+batch_size: number of images per batch during training
+Model
+The code uses the ResNet18 neural network architecture to perform image classification. The last fully connected layer is modified to output the number of classes in the dataset.
+
+Data preprocessing
+The images are preprocessed using the following transformations:
+
+Resized to 224x224
+Randomly rotated by up to 30 degrees
+Randomly flipped horizontally and vertically
+Converted to a tensor
+Normalized using the mean and standard deviation of the ImageNet dataset
+Training
+The model is trained using the SGD optimizer with a learning rate of 0.001 and weight decay of 1e-2.
+
+Output
+The code prints the training and validation loss and accuracy for each epoch. The trained model is saved to a file named ResNet.pt in the specified directory.
 Epoch [1/20], Loss (train/test) : 2.6906/2.0638,Acc (train/test): 0.1435/0.0567 
 
 Epoch [2/20], Loss (train/test) : 1.8386/1.6680,Acc (train/test): 0.1322/0.0789
