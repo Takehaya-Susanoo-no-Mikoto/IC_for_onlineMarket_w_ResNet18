@@ -94,5 +94,5 @@ or that
 
 ![372486](https://user-images.githubusercontent.com/124432421/236702725-14e9a29a-37ec-45ab-9078-c394e769d747.jpg)
 
-# Creating database
+# Creating image database 
 Also u can check my Lmdb solution of storing data from images if u have same problems with timeworking of ur hard disk as me
