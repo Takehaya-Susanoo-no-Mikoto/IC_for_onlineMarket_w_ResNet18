@@ -39,6 +39,7 @@ The code prints the training and validation loss and accuracy for each epoch. Th
 ### Architecture changes
 
 (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+
 (fc): Linear(in_features=512, out_features=874, bias=True)
 
 ### Epochs
